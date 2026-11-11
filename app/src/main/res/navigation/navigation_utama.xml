@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_utama"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapplication11.HomeFragment"
+        android:label="home"
+        tools:layout="@layout/fragment_home"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplication11.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/fragment_profile"
+        xmlns:tools="http://schemas.android.com/tools">
+        <action
+            android:id="@+id/action_profileFragment_to_detailProfileFragment"
+            app:destination="@id/detailProfileFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.myapplication11.SettingFragment"
+        android:label="setting"
+        tools:layout="@layout/fragment_setting"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/detailProfileFragment"
+        android:name="com.example.myapplication11.DetailProfileFragment"
+        android:label="fragment_detail_profile"
+        tools:layout="@layout/fragment_detail_profile"
+        xmlns:tools="http://schemas.android.com/tools">
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="dataSatu"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+</navigation>
